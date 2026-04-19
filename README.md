@@ -1,16 +1,46 @@
-# labmob
+# README — LabMob Movie App
 
-A new Flutter project.
+**Project:** `labmob`  
+**Fokus:** Movie App dengan API publik, cache offline, search, filter, dan loading shimmer  
+**State Management:** Provider
 
-## Getting Started
+## Deskripsi Singkat
+LabMob Movie App adalah aplikasi Flutter yang menampilkan data film dari public API. Aplikasi ini dibuat untuk memenuhi tugas Mobile Development dengan fokus pada struktur kode yang rapi, offline readiness, error handling, search/filter, serta reusable widgets.
 
-This project is a starting point for a Flutter application.
+## Fitur Utama
+- Mengambil data film dari public API.
+- Menyimpan data terakhir ke cache agar tetap bisa dibuka saat offline.
+- Search film berdasarkan judul, genre, deskripsi, dan tahun.
+- Filter film berdasarkan kategori.
+- Loading state dengan shimmer effect.
+- Reusable widget untuk movie card, loading, empty state, dan error state.
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
+- Flutter
+- Provider
+- HTTP
+- SharedPreferences
+- Connectivity Plus
+- Shimmer
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Struktur Folder
+- `models/` → model data film
+- `services/` → API call dan cache
+- `providers/` → state management
+- `views/` → halaman UI
+- `widgets/` → komponen UI yang dipakai ulang
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Alasan Menggunakan Provider
+Provider dipilih karena sederhana, ringan, dan mudah dipahami. Dengan Provider, logika data bisa dipisahkan dari UI sehingga kode lebih rapi, mudah dirawat, dan lebih aman untuk penambahan fitur baru.
+
+## Cara Menjalankan
+```bash
+flutter pub get
+flutter run
+```
+
+## Catatan Implementasi
+Jika internet tidak tersedia, aplikasi akan menampilkan data terakhir yang berhasil disimpan. Jika cache belum ada, aplikasi menampilkan pesan error yang ramah pengguna.
+
+## API yang Digunakan
+SampleAPIs Movies (endpoint kategori film).
